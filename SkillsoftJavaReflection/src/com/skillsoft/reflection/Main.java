@@ -1,67 +1,71 @@
 package com.skillsoft.reflection;
 
 import java.lang.reflect.Proxy; // class Proxy
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
 
-        Repository proxyRepository = (Repository) Proxy.newProxyInstance(
-          Main.class.getClassLoader(),
-          new Class[] {Repository.class},
-          new SimplePrintInvocationHandler()
+        List<String> list = new ArrayList<>();
+
+        List proxyList = (List) Proxy.newProxyInstance(
+                Main.class.getClassLoader(),
+                new Class[] {List.class},
+                new ListInvocationHandler(list)
         );
 
-        System.out.println();
+        proxyList.add("Java");
+        System.out.println(list); // [Java]
 
-        proxyRepository.create("Hello");
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public abstract void com.skillsoft.reflection.Repository.create(java.lang.Object)
-        //Arguments: [Hello]
+        proxyList.add("Python");
+        System.out.println(list); // [Java, Python]
 
-        System.out.println();
-
-        proxyRepository.read(12345);
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public abstract java.lang.Object com.skillsoft.reflection.Repository.read(int)
-        //Arguments: [12345]
+        proxyList.add("C++");
+        proxyList.add("C#");
+        proxyList.add("JavaScript");
+        System.out.println(list); // [Java, Python, C++, C#, JavaScript]
 
         System.out.println();
 
-        proxyRepository.update("World");
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public abstract void com.skillsoft.reflection.Repository.update(java.lang.Object)
-        //Arguments: [World]
+        proxyList.remove("Java");
+        System.out.println(list); // [Python, C++, C#, JavaScript]
+
+        proxyList.remove("JavaScript");
+        System.out.println(list); // [Python, C++, C#]
 
         System.out.println();
 
-        proxyRepository.delete(67890);
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public abstract void com.skillsoft.reflection.Repository.delete(int)
-        //Arguments: [67890]
+        System.out.println("index 2: " + proxyList.get(2)); // index 2: C#
+        System.out.println("index 0: " + proxyList.get(0)); // index 0: Python
 
-        System.out.println();
-
-        proxyRepository.toString(); // Result of 'Object.toString()' is ignored
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public java.lang.String java.lang.Object.toString()
-        //Arguments: null
-
-        System.out.println();
-
-        System.out.println(proxyRepository);
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public java.lang.String java.lang.Object.toString()
-        //Arguments: null
-        //--------------
-        //Any return value is fine here
-
-        System.out.println();
-
-        proxyRepository.hashCode(); // Result of 'Object.hashCode()' is ignored
-        //Proxy: class com.sun.proxy.$Proxy0
-        //Method invoked: public native int java.lang.Object.hashCode()
-        //Arguments: null
-        //java.lang.ClassCastException: class java.lang.String cannot be cast to class java.lang.Integer
+//        List proxyList = (List) Proxy.newProxyInstance( // Raw use of parameterized class 'List'
+//                Main.class.getClassLoader(),
+//                new Class[]{List.class},
+//                new SimplePrintInvocationHandler()
+//        );
+//
+//        System.out.println();
+//
+//        proxyList.add("Java"); // Unchecked call to 'add(E)' as a member of raw type 'java.util.List'
+//        //Proxy: class com.sun.proxy.$Proxy0
+//        //Method invoked: public abstract boolean java.util.List.add(java.lang.Object)
+//        //Arguments: [Java]
+//
+//        System.out.println();
+//
+//        proxyList.clear();
+//        //Proxy: class com.sun.proxy.$Proxy0
+//        //Method invoked: public abstract void java.util.List.clear()
+//        //Arguments: null
+//
+//        System.out.println();
+//
+//        proxyList.remove(1234);
+//        //Proxy: class com.sun.proxy.$Proxy0
+//        //Method invoked: public abstract java.lang.Object java.util.List.remove(int)
+//        //Arguments: [1234]
     }
 }
 

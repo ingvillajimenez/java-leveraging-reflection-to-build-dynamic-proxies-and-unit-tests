@@ -11,30 +11,20 @@ public class SimplePrintInvocationHandler implements InvocationHandler {
         System.out.println("--------------");
 
         System.out.println("Proxy: " + proxy.getClass());
-        // class com.sun.proxy.$Proxy0
-        // class com.sun.proxy.$Proxy0
-        // class com.sun.proxy.$Proxy0
-        // class com.sun.proxy.$Proxy0
-        // class com.sun.proxy.$Proxy0
-        // class com.sun.proxy.$Proxy0
+        // Proxy: class com.sun.proxy.$Proxy0
+        // Proxy: class com.sun.proxy.$Proxy0
+        // Proxy: class com.sun.proxy.$Proxy0
         System.out.println("Method invoked: " + method);
-        // public abstract void com.skillsoft.reflection.Repository.create(java.lang.Object)
-        // public abstract java.lang.Object com.skillsoft.reflection.Repository.read(int)
-        // public abstract void com.skillsoft.reflection.Repository.update(java.lang.Object)
-        // public abstract void com.skillsoft.reflection.Repository.delete(int)
-        // public java.lang.String java.lang.Object.toString()
-        // public native int java.lang.Object.hashCode()
+        // Method invoked: public abstract boolean java.util.List.add(java.lang.Object)
+        // Method invoked: public abstract void java.util.List.clear()
+        // Method invoked: public abstract java.lang.Object java.util.List.remove(int)
         System.out.println("Arguments: " + Arrays.toString(args));
-        // [Hello]
-        // [12345]
-        // [World]
-        // [67890]
-        // null
-        // null
+        // Arguments: [Java]
+        // Arguments: null
+        // Arguments: [1234]
 
         System.out.println("--------------");
 
-        return true; //Incompatible type might be returned when proxying method 'hashCode()': required: exactly Integer; got: exactly Boolean
-//        return "Any return value is fine here";
+        return true;
     }
 }
