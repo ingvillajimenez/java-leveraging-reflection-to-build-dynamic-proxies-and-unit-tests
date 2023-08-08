@@ -91,6 +91,68 @@ public class Main {
         } else {
             System.out.println("All tests passed!");
         }
+
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: null
+        //Found testcase method: []
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: []
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: [public void com.skillsoft.reflection.EmployeeTest.testBonus()]
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: [public void com.skillsoft.reflection.EmployeeTest.testBonus()]
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: [public void com.skillsoft.reflection.EmployeeTest.testBonus(), public void com.skillsoft.reflection.EmployeeTest.testGetters()]
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: [public void com.skillsoft.reflection.EmployeeTest.testBonus(), public void com.skillsoft.reflection.EmployeeTest.testGetters(), public void com.skillsoft.reflection.EmployeeTest.testSetters()]
+        //
+        //---------------
+        //Found setup method: public void com.skillsoft.reflection.EmployeeTest.setup()
+        //Found teardown method: public void com.skillsoft.reflection.EmployeeTest.teardown()
+        //Found testcase method: [public void com.skillsoft.reflection.EmployeeTest.testBonus(), public void com.skillsoft.reflection.EmployeeTest.testGetters(), public void com.skillsoft.reflection.EmployeeTest.testSetters(), public void com.skillsoft.reflection.EmployeeTest.testIncrementSalary()]
+        //
+        //----------------
+        //
+        //----------- Starting tests
+        //***Setup complete
+        //***testBonus()
+        //110000.00014901161
+        //Testcase failed:-( public void com.skillsoft.reflection.EmployeeTest.testBonus()
+        //***Teardown complete
+        //***Setup complete
+        //***testGetters()
+        //Testcase failed:-( public void com.skillsoft.reflection.EmployeeTest.testGetters()
+        //***Teardown complete
+        //***Setup complete
+        //***testSetters()
+        //Testcase failed:-( public void com.skillsoft.reflection.EmployeeTest.testSetters()
+        //***Teardown complete
+        //***Setup complete
+        //***testIncrementSalary()
+        //Testcase failed:-( public void com.skillsoft.reflection.EmployeeTest.testIncrementSalary()
+        //***Teardown complete
+        //------------- Test completed
+        //The following test cases failed
+        //testBonus
+        //testGetters
+        //testSetters
+        //testIncrementSalary
     }
 }
 
